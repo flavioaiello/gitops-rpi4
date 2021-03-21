@@ -25,3 +25,8 @@ export GITHUB_TOKEN=
 flux bootstrap github --owner=flavioaiello --repository=rpi4-cluster --path=homecluster --personal
 
 ```
+
+Uninstall
+```
+flux uninstall --namespace=flux-system
+```
