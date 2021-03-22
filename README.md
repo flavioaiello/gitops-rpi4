@@ -30,7 +30,8 @@ Uninstall
 ```
 flux uninstall --namespace=flux-system
 ```
-
+## Dashboard
+The Kubernetes Dashboard can be exposed by MetalLB and login `kubectl describe secret default-token-xyz`.
 
 ## Pihole
 The Pihole deployment is tailored to be run on microk8s with flux2 based gitops and MetalLB. MetalLB is a load balancer for onpremise Kubernetes environments. Cloud providers run their native implementation. MetalLB bridges this functionality for onpremise environments so that services can be provided externally, too.
