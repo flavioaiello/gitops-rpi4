@@ -5,6 +5,7 @@ metadata:
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
+namespace: pihole
 metadata:
   name: pihole-etc-pv-claim
 spec:
@@ -16,6 +17,7 @@ spec:
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
+namespace: pihole
 metadata:
   name: pihole-dnsmasq-pv-claim
 spec:
@@ -27,6 +29,7 @@ spec:
 ---
 apiVersion: apps/v1
 kind: Deployment
+namespace: pihole
 metadata:
   name: pihole
   labels:
@@ -68,6 +71,7 @@ spec:
             claimName: pihole-dnsmasq-pv-claim
 ---
 kind: Service
+namespace: pihole
 apiVersion: v1
 metadata:
   name: pihole
