@@ -63,14 +63,13 @@ spec:
           persistentVolumeClaim:
             claimName: pihole-dnsmasq-pv-claim
 ---
-apiVersion: v1
 kind: Service
+apiVersion: v1
 metadata:
   name: pihole
 spec:
   selector:
     app: pihole
-  clusterIP: 10.41.0.2
   ports:
     - port: 80
       targetPort: 80
@@ -83,3 +82,6 @@ spec:
       targetPort: 53
       protocol: UDP
       name: dns-udp
+  selector:
+    app: hello
+  type: LoadBalancer
