@@ -32,6 +32,15 @@ spec:
   selector:
     matchLabels:
       app: pihole
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: if
+            operator: In
+            values:
+            - wired
   template:
     metadata:
       labels:
